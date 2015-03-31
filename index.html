@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>vue.js</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  [v-cloak] { display: none; }
+</style>
+</head>
+<body>
+  
+  <div class="app" v-cloak>
+    
+    <div class="pane main">
+      <div class="object" v-style="style"></div>
+    </div>
+    
+    <div class="pane controller">
+      <h2 class="heading">controller</h2>
+      
+      <div class="property" v-repeat="properties">
+        <h3 class="subHeading">{{property}}:{{value}}</h3>
+        <input type="range" value="100" max="500" min="10" step="10" v-model="value" v-on="change: setStyle">
+      </div>
+      
+      <div class="add-property">
+        <h3 class="subHeading">Add Property</h3>
+        <input type="text" v-model="inputText"><button v-on="click: addProperty">Add</button>
+      </div>
+      
+    </div>
+    
+  </div>
+
+<script src="js/lib/vue.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
